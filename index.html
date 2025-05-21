@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techno Project</title>
+    <title>Jhales' Profile</title>
     <style>
         body {
             font-family: sans-serif;
@@ -19,7 +19,8 @@
             background-repeat: no-repeat; /* Prevents the image from repeating */
             background-attachment: fixed; /* Keeps the background fixed when scrolling, optional */
             /* End Background Image styles */
-            color: #333;
+            background-color: #1a1a1a; /* Dark background for consistent look if bg2.jpg isn't fully dark */
+            color: #f0f0f0; /* Lighter text for dark background */
             padding-top: 50px; /* Space from the top */
             box-sizing: border-box;
             position: relative; /* Needed for positioning the modal */
@@ -29,10 +30,11 @@
             width: 90%;
             max-width: 400px; /* Adjust as needed */
             text-align: center;
-            background: rgba(255, 255, 255, 0.2); /* Slightly transparent background for the container */
+            background: rgba(0, 0, 0, 0.4); /* Darker, more transparent background for the container */
             border-radius: 15px;
             padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle light border */
         }
 
         .profile-header {
@@ -45,7 +47,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #fff; /* White border around profile picture */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
             margin-bottom: 10px;
         }
 
@@ -54,56 +56,81 @@
             font-weight: bold;
             color: #fff;
             margin-bottom: 5px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         .profile-title {
             font-size: 1.1em;
-            color: #eee;
+            color: #bbb; /* Slightly darker white for subtitle */
             margin-bottom: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 25px; /* Space between social icons */
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.2s ease, filter 0.2s ease;
+            filter: grayscale(0%); /* Ensure icons are in color by default */
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            filter: grayscale(0%); /* Keep color on hover */
         }
 
         .link-button {
             display: flex;
             align-items: center;
-            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white for buttons */
-            border: 2px solid #555;
-            border-radius: 30px; /* More rounded corners for the buttons */
-            padding: 10px 20px;
+            /* Match the dark, slightly transparent look of the example buttons */
+            background-color: rgba(60, 60, 60, 0.7); /* Darker, slightly transparent */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle light border */
+            border-radius: 10px; /* Less rounded than previous versions, more like example */
+            padding: 12px 20px;
             margin: 15px auto; /* Center buttons horizontally */
             text-decoration: none;
-            color: #333;
+            color: #f0f0f0; /* Lighter text for dark buttons */
             font-size: 1.1em;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            overflow: hidden; /* Ensures image stays within border-radius */
+            font-weight: normal; /* Less bold for a softer look */
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow */
             max-width: 300px; /* Limit button width */
+            justify-content: flex-start; /* Align content to the left */
         }
 
         .link-button:hover {
-            background-color: rgba(255, 255, 255, 1);
+            background-color: rgba(80, 80, 80, 0.8);
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         }
 
         .link-button img {
             width: 40px;
             height: 40px;
-            border-radius: 50%;
+            border-radius: 8px; /* Slightly rounded corners for button images */
             object-fit: cover;
             margin-right: 15px;
-            border: 1px solid #ccc; /* Subtle border for button images */
+            border: none; /* No border for button images */
         }
 
         .signature {
             margin-top: 50px;
             text-align: center;
+            color: #ccc; /* Lighter color for signature text if it were text */
         }
 
         .signature img {
             width: 150px; /* Adjust size as needed */
-            opacity: 0.8; /* Slightly transparent */
+            opacity: 0.7; /* Slightly more transparent for a subtle effect */
+            filter: grayscale(100%) brightness(150%); /* Makes signature white/lighter for dark background */
         }
 
         /* Top right three dots (menu icon) - now acts as the QR trigger */
@@ -136,8 +163,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
-            justify-content: center; /* Changed from display:flex for consistency */
+            background-color: rgba(0, 0, 0, 0.8); /* Darker semi-transparent background for modal overlay */
+            display: flex; /* Kept display:flex here as it's the state when visible */
+            justify-content: center;
             align-items: center;
             z-index: 2000; /* Ensure it's on top of everything */
         }
@@ -146,7 +174,7 @@
             background-color: #fff;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow for modal */
             text-align: center;
             position: relative;
             max-width: 350px; /* Adjust modal width */
@@ -225,6 +253,51 @@
         .qr-modal-copy-button:hover {
             background-color: #333;
         }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            body {
+                padding-top: 20px; /* Less top padding on smaller screens */
+            }
+
+            .container {
+                width: 95%; /* Wider container on smaller screens */
+                padding: 15px;
+                border-radius: 10px;
+            }
+
+            .profile-pic {
+                width: 100px;
+                height: 100px;
+            }
+
+            .profile-name {
+                font-size: 1.5em;
+            }
+
+            .profile-title {
+                font-size: 1em;
+            }
+
+            .link-button {
+                padding: 10px 15px;
+                font-size: 1em;
+            }
+
+            .link-button img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .qr-modal-content {
+                padding: 20px;
+            }
+
+            .qr-modal-qr-code {
+                width: 180px;
+                height: 180px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -238,31 +311,27 @@
         <div class="profile-header">
             <img src="jeyls.jpg" alt="Jhales' Profile Picture" class="profile-pic">
             <div class="profile-name">Jhales</div>
-            <div class="profile-title">Seller | Student</div>
-        </div>
+            <div class="profile-title">Programmer | Tech Enthusiast</div> </div>
 
-        <a href="https://www.facebook.com/jhales016" class="link-button">
-            <img src="fb.jpg" alt="Facebook Icon">
-            Facebook
-        </a>
-        <a href="https://www.instagram.com/wkadflzmxhs/" class="link-button">
-            <img src="ig.jpg" alt="Instagram Icon">
-            Instagram
-        </a>
-        <a href="https://www.youtube.com/@Jeylzu" class="link-button">
-            <img src="yt.png" alt="Youtube Icon">
-            Youtube
-        </a>
-        <a href="https://www.tiktok.com/@jailzxn?_r=1&_d=secCgYIASAHKAESPgo87HCNuf7OX0DpQhHIAMpjZ2elp8E%2BlTFvm3k%2FYDn9Vxf6g66zrP6u34%2BX8XIWrKrhgX2Fy0ta9uYu5ELZGgA%3D&_svg=1&checksum=b8089ffae28949876c49a966d2d46722301d15d6e38f5d8543afa9e09c6ff843&sec_uid=MS4wLjABAAAA1volJ8Mg7CIS_nHlWqvdSmGy2R8sHfDGIvbnlYHu-KcQVYZVqbnRT1ZXD63ogQlV&sec_user_id=MS4wLjABAAAA1volJ8Mg7CIS_nHlWqvdSmGy2R8sHfDGIvbnlYHu-KcQVYZVqbnRT1ZXD63ogQlV&share_app_id=1180&share_author_id=6804769538170110977&share_link_id=6A5A1A88-ABC9-43E4-B96D-19A61C94E7E5&sharer_language=en&social_share_type=4&source=h5_t&timestamp=1747856026&tt_from=copy&u_code=dbbi54hj0ac9l1&ug_btm=b8727%2Cb0&user_id=6804769538170110977&utm_campaign=client_share&utm_medium=ios&utm_source=copy" class="link-button">
-            <img src="tiktok.png" alt="TikTok Icon">
-            TikTok
-        </a>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/wkadflzmxhs/"><img src="ig.jpg" alt="Instagram Icon" class="social-icon"></a>
+            <a href="https://www.facebook.com/jhales016"><img src="fb.jpg" alt="Facebook Icon" class="social-icon"></a>
+            <a href="https://www.tiktok.com/@jailzxn?_r=1&_d=secCgYIASAHKAESPgo87HCNuf7OX0DpQhHIAMpjZ2elp8E%2BlTFvm3k%2FYDn9Vxf6g66zrP6u34%2BX8XIWrKrhgX2Fy0ta9uYu5ELZGgA%3D&_svg=1&checksum=b8089ffae28949876c49a966d2d46722301d15d6e38f5d8543afa9e09c6ff843&sec_uid=MS4wLjABAAAA1volJ8Mg7CIS_nHlWqvdSmGy2R8sHfDGIvbnlYHu-KcQVYZVqbnRT1ZXD63ogQlV&sec_user_id=MS4wLjABAAAA1volJ8Mg7CIS_nHlWqvdSmGy2R8sHfDGIvbnlYHu-KcQVYZVqbnRT1ZXD63ogQlV&share_app_id=1180&share_author_id=6804769538170110977&share_link_id=6A5A1A88-ABC9-43E4-B96D-19A61C94E7E5&sharer_language=en&social_share_type=4&source=h5_t&timestamp=1747856026&tt_from=copy&u_code=dbbi54hj0ac9l1&ug_btm=b8727%2Cb0&user_id=6804769538170110977&utm_campaign=client_share&utm_medium=ios&utm_source=copy"><img src="tiktok.png" alt="TikTok Icon" class="social-icon"></a>
+            <a href="https://www.youtube.com/@Jeylzu"><img src="yt.png" alt="YouTube Icon" class="social-icon"></a>
+            </div>
 
-        </div>
+        <a href="#" class="link-button">
+            <img src="book.jpg" alt="Book Icon"> Favorite Book
+        </a>
+        <a href="#" class="link-button">
+            <img src="website.jpg" alt="Website Icon"> Official Website
+        </a>
+       
+    </div>
 
     <div id="qrModal" class="qr-modal-overlay">
         <div class="qr-modal-content">
-            <span class="qr-modal-close" onclick="closeQrModal()">×</span>
+            <span class="qr-modal-close" onclick="closeQrModal()">&times;</span>
             <img src="jeyls.jpg" alt="Jhales' Profile Picture" class="qr-modal-profile-pic">
             <div class="qr-modal-name">Jhales</div>
             <img src="qr.png" alt="QR Code" class="qr-modal-qr-code"> <a href="qr.png" download="qr.png" class="qr-modal-download-link">Scan or download QR code</a>
