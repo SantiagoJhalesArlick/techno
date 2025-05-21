@@ -13,7 +13,7 @@
             align-items: flex-start; /* Align to the top */
             min-height: 100vh;
             /* Background Image styles */
-            background-image: url('bg2.jpg'); /* CHANGE THIS TO YOUR IMAGE FILE (e.g., 'background.png', 'background.gif') */
+            background-image: url('bg1.jpg'); /* CHANGE THIS TO YOUR IMAGE FILE (e.g., 'background.png', 'background.gif') */
             background-size: cover; /* Ensures the image covers the entire background */
             background-position: center; /* Centers the background image */
             background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -106,29 +106,28 @@
             opacity: 0.8; /* Slightly transparent */
         }
 
-        /* Top right three dots (menu icon) - now acts as the QR trigger */
-        .menu-icon {
+        /* Top right QR code icon that triggers the modal */
+        .qr-trigger-icon { /* Renamed from .menu-icon for clarity */
             position: absolute;
             top: 20px;
             right: 20px;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
+            width: 40px; /* Adjust size of the QR icon */
+            height: 40px;
             cursor: pointer;
+            border-radius: 5px; /* Optional: slight rounding for the QR image */
+            overflow: hidden; /* Ensure image fits */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
             z-index: 1000; /* Ensure it's above other content */
         }
 
-        .menu-icon span {
-            width: 5px;
-            height: 5px;
-            background-color: #fff;
-            border-radius: 50%;
+        .qr-trigger-icon img {
+            width: 100%;
+            height: 100%;
+            display: block; /* Remove extra space below image */
+            object-fit: cover;
         }
 
-        /* QR Modal Styles */
+        /* QR Modal Styles (same as before) */
         .qr-modal-overlay {
             display: none; /* Hidden by default */
             position: fixed;
@@ -137,7 +136,6 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
-            display: flex;
             justify-content: center;
             align-items: center;
             z-index: 2000; /* Ensure it's on top of everything */
@@ -229,16 +227,13 @@
     </style>
 </head>
 <body>
-    <div class="menu-icon" onclick="openQrModal()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+    <div class="qr-trigger-icon" onclick="openQrModal()">
+        <img src="qr.png" alt="QR Code Icon"> </div>
 
     <div class="container">
         <div class="profile-header">
             <img src="jeyls.jpg" alt="Jhales' Profile Picture" class="profile-pic">
-            <div class="profile-name">Jhales</div>
+            <div class="profile-name">Arlicks</div>
             <div class="profile-title">Seller | Student</div>
         </div>
 
@@ -246,27 +241,29 @@
             <img src="fb.jpg" alt="Facebook Icon">
             Facebook
         </a>
-        <a href="https://www.instagram.com/wkadflzmxhs/" class="link-button">
+        <a href="#" class="link-button">
             <img src="ig.jpg" alt="Instagram Icon">
             Instagram
         </a>
-        <a href="https://www.youtube.com/@Jeylzu" class="link-button">
-            <img src="yt.png" alt="Youtube Icon">
-            Youtube
+        <a href="#" class="link-button">
+            <img src="twitter.jpg" alt="Twitter Icon">
+            Twitter
         </a>
-        <a href="https://www.tiktok.com/@jailzxn?_r=1&_d=secCgYIASAHKAESPgo87HCNuf7OX0DpQhHIAMpjZ2elp8E%2BlTFvm3k%2FYDn9Vxf6g66zrP6u34%2BX8XIWrKrhgX2Fy0ta9uYu5ELZGgA%3D&_svg=1&checksum=b8089ffae28949876c49a966d2d46722301d15d6e38f5d8543afa9e09c6ff843&sec_uid=MS4wLjABAAAA1volJ8Mg7CIS_nHlWqvdSmGy2R8sHfDGIvbnlYHu-KcQVYZVqbnRT1ZXD63ogQlV&sec_user_id=MS4wLjABAAAA1volJ8Mg7CIS_nHlWqvdSmGy2R8sHfDGIvbnlYHu-KcQVYZVqbnRT1ZXD63ogQlV&share_app_id=1180&share_author_id=6804769538170110977&share_link_id=6A5A1A88-ABC9-43E4-B96D-19A61C94E7E5&sharer_language=en&social_share_type=4&source=h5_t&timestamp=1747856026&tt_from=copy&u_code=dbbi54hj0ac9l1&ug_btm=b8727%2Cb0&user_id=6804769538170110977&utm_campaign=client_share&utm_medium=ios&utm_source=copy" class="link-button">
+        <a href="#" class="link-button">
             <img src="tiktok.png" alt="TikTok Icon">
             TikTok
         </a>
 
-      
+        <div class="signature">
+            <img src="james_signature.png" alt="James's Signature"> </div>
+    </div>
 
     <div id="qrModal" class="qr-modal-overlay">
         <div class="qr-modal-content">
             <span class="qr-modal-close" onclick="closeQrModal()">&times;</span>
             <img src="jeyls.jpg" alt="Jhales' Profile Picture" class="qr-modal-profile-pic">
             <div class="qr-modal-name">Jhales</div>
-            <img src="your_qr_code.png" alt="QR Code" class="qr-modal-qr-code"> <a href="your_qr_code.png" download="qr_code.png" class="qr-modal-download-link">Scan or download QR code</a>
+            <img src="qr.png" alt="QR Code" class="qr-modal-qr-code"> <a href="qr.png" download="qr.png" class="qr-modal-download-link">Scan or download QR code</a>
             <button class="qr-modal-copy-button" onclick="copyPageUrl()">Copy Page URL</button>
         </div>
     </div>
