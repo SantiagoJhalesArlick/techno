@@ -10,31 +10,29 @@
             margin: 0;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Align to the top */
+            align-items: flex-start; 
             min-height: 100vh;
-            /* Background Image styles */
-            background-image: url('bg2.jpg'); /* CHANGE THIS TO YOUR IMAGE FILE (e.g., 'background.png', 'background.gif') */
-            background-size: cover; /* Ensures the image covers the entire background */
-            background-position: center; /* Centers the background image */
-            background-repeat: no-repeat; /* Prevents the image from repeating */
-            background-attachment: fixed; /* Keeps the background fixed when scrolling, optional */
-            /* End Background Image styles */
-            background-color: #1a1a1a; /* Dark background for consistent look if bg2.jpg isn't fully dark */
-            color: #f0f0f0; /* Lighter text for dark background */
-            padding-top: 50px; /* Space from the top */
+            background-image: url('bg2.jpg'); 
+            background-size: cover;
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed;
+            background-color: #1a1a1a; 
+            color: #f0f0f0;
+            padding-top: 50px; 
             box-sizing: border-box;
-            position: relative; /* Needed for positioning the modal */
+            position: relative;
         }
 
         .container {
             width: 90%;
-            max-width: 400px; /* Adjust as needed */
+            max-width: 400px;
             text-align: center;
-            background: rgba(0, 0, 0, 0.4); /* Darker, more transparent background for the container */
+            background: rgba(0, 0, 0, 0.4); 
             border-radius: 15px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle light border */
+            border: 1px solid rgba(255, 255, 255, 0.1); 
         }
 
         .profile-header {
@@ -46,7 +44,7 @@
             height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #fff; /* White border around profile picture */
+            border: 3px solid #fff; 
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
             margin-bottom: 10px;
         }
@@ -61,7 +59,7 @@
 
         .profile-title {
             font-size: 1.1em;
-            color: #bbb; /* Slightly darker white for subtitle */
+            color: #bbb; 
             margin-bottom: 20px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
@@ -70,7 +68,7 @@
             display: flex;
             justify-content: center;
             margin-bottom: 30px;
-            gap: 25px; /* Space between social icons */
+            gap: 25px; 
         }
 
         .social-icon {
@@ -79,31 +77,30 @@
             border-radius: 50%;
             object-fit: cover;
             transition: transform 0.2s ease, filter 0.2s ease;
-            filter: grayscale(0%); /* Ensure icons are in color by default */
+            filter: grayscale(0%); 
         }
 
         .social-icon:hover {
             transform: translateY(-3px);
-            filter: grayscale(0%); /* Keep color on hover */
+            filter: grayscale(0%);
         }
 
         .link-button {
             display: flex;
             align-items: center;
-            /* Match the dark, slightly transparent look of the example buttons */
-            background-color: rgba(60, 60, 60, 0.7); /* Darker, slightly transparent */
-            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle light border */
-            border-radius: 10px; /* Less rounded than previous versions, more like example */
+            background-color: rgba(60, 60, 60, 0.7); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            border-radius: 10px; 
             padding: 12px 20px;
-            margin: 15px auto; /* Center buttons horizontally */
+            margin: 15px auto;
             text-decoration: none;
-            color: #f0f0f0; /* Lighter text for dark buttons */
+            color: #f0f0f0; 
             font-size: 1.1em;
-            font-weight: normal; /* Less bold for a softer look */
+            font-weight: normal; 
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow */
-            max-width: 300px; /* Limit button width */
-            justify-content: flex-start; /* Align content to the left */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); 
+            max-width: 300px;
+            justify-content: flex-start;
         }
 
         .link-button:hover {
@@ -115,25 +112,14 @@
         .link-button img {
             width: 40px;
             height: 40px;
-            border-radius: 8px; /* Slightly rounded corners for button images */
+            border-radius: 8px; 
             object-fit: cover;
             margin-right: 15px;
-            border: none; /* No border for button images */
+            border: none;
         }
 
-        .signature {
-            margin-top: 50px;
-            text-align: center;
-            color: #ccc; /* Lighter color for signature text if it were text */
-        }
+     
 
-        .signature img {
-            width: 150px; /* Adjust size as needed */
-            opacity: 0.7; /* Slightly more transparent for a subtle effect */
-            filter: grayscale(100%) brightness(150%); /* Makes signature white/lighter for dark background */
-        }
-
-        /* Top right three dots (menu icon) - now acts as the QR trigger */
         .menu-icon {
             position: absolute;
             top: 20px;
@@ -145,7 +131,7 @@
             justify-content: space-around;
             align-items: center;
             cursor: pointer;
-            z-index: 1000; /* Ensure it's above other content */
+            z-index: 1000; 
         }
 
         .menu-icon span {
@@ -155,29 +141,28 @@
             border-radius: 50%;
         }
 
-        /* QR Modal Styles */
         .qr-modal-overlay {
-            display: none; /* Hidden by default */
+            display: none; 
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8); /* Darker semi-transparent background for modal overlay */
-            display: flex; /* Kept display:flex here as it's the state when visible */
+            background-color: rgba(0, 0, 0, 0.8); 
+            display: flex; 
             justify-content: center;
             align-items: center;
-            z-index: 2000; /* Ensure it's on top of everything */
+            z-index: 2000; 
         }
 
         .qr-modal-content {
             background-color: #fff;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow for modal */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); 
             text-align: center;
             position: relative;
-            max-width: 350px; /* Adjust modal width */
+            max-width: 350px;
             width: 90%;
             display: flex;
             flex-direction: column;
@@ -191,7 +176,7 @@
             font-size: 2em;
             cursor: pointer;
             color: #555;
-            line-height: 1; /* For better vertical alignment of 'x' */
+            line-height: 1;
             padding: 0 5px;
         }
 
@@ -216,10 +201,10 @@
         }
 
         .qr-modal-qr-code {
-            width: 200px; /* Size of the QR code image within the modal */
+            width: 200px;
             height: 200px;
             margin: 20px 0;
-            border: 1px solid #eee; /* Subtle border around QR */
+            border: 1px solid #eee; 
         }
 
         .qr-modal-download-link,
@@ -254,14 +239,13 @@
             background-color: #333;
         }
 
-        /* Mobile Responsiveness */
         @media (max-width: 600px) {
             body {
-                padding-top: 20px; /* Less top padding on smaller screens */
+                padding-top: 20px; 
             }
 
             .container {
-                width: 95%; /* Wider container on smaller screens */
+                width: 95%; 
                 padding: 15px;
                 border-radius: 10px;
             }
@@ -310,8 +294,8 @@
     <div class="container">
         <div class="profile-header">
             <img src="jeyls.jpg" alt="Jhales' Profile Picture" class="profile-pic">
-            <div class="profile-name">Sofia</div>
-            <div class="profile-title">Mayor | Tech Enthusiast</div> </div>
+            <div class="profile-name">Jhales</div>
+            <div class="profile-title">Student | Web Developer</div> </div>
 
         <div class="social-icons">
             <a href="https://www.instagram.com/wkadflzmxhs/"><img src="ig.jpg" alt="Instagram Icon" class="social-icon"></a>
@@ -320,12 +304,17 @@
             <a href="https://www.youtube.com/@Jeylzu"><img src="yt.png" alt="YouTube Icon" class="social-icon"></a>
             </div>
 
-        <a href="#" class="link-button">
+        <a href="https://www.richdad.com/books/rich-dad-poor-dad    " class="link-button">
             <img src="book.jpg" alt="Book Icon"> Favorite Book
         </a>
         <a href="#" class="link-button">
             <img src="website.jpg" alt="Website Icon"> Official Website
         </a>
+
+        <a href="https://open.spotify.com/track/4cBm8rv2B5BJWU2pDaHVbF?si=cafbc7f3dd354df6" class="link-button">
+    <img src="spotify.jpg" alt="Spotify Icon"> Music Spotify Multo
+</a>
+
        
     </div>
 
@@ -358,7 +347,6 @@
             });
         }
 
-        // Initially hide the modal on page load
         document.addEventListener('DOMContentLoaded', (event) => {
             document.getElementById('qrModal').style.display = 'none';
         });
