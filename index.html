@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <style>
-        /* Your existing custom CSS */
+      
         body {
             font-family: sans-serif;
             margin: 0;
@@ -15,7 +15,7 @@
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
-            background-image: url('bg3.jpg'); /* Make sure bg2.jpg is in the same directory or provide full path */
+            background-image: url('bg3.jpg'); /* background */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -121,7 +121,7 @@
             border: none;
         }
 
-        /* --- Music Card Styling --- */
+      
         .music-card {
             background-color: rgba(60, 60, 60, 0.7);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -193,20 +193,6 @@
             color: #fff;
             font-size: 1.2em;
         }
-        /* --- End Music Card Styling --- */
-
-
-        .signature {
-            margin-top: 50px;
-            text-align: center;
-            color: #ccc;
-        }
-
-        .signature img {
-            width: 150px;
-            opacity: 0.7;
-            filter: grayscale(100%) brightness(150%);
-        }
 
         .menu-icon {
             position: absolute;
@@ -229,7 +215,7 @@
             border-radius: 50%;
         }
 
-        /* --- QR Modal Styling (from your code) --- */
+
         .qr-modal-overlay {
             display: none;
             position: fixed;
@@ -327,16 +313,15 @@
             background-color: #333;
         }
 
-        /* Override Bootstrap modal content to match your dark theme */
+       
         .modal-content {
-            background-color: #2c2c2c; /* Darker gray for the modal */
-            color: white;
+            background-color: #2c2c2c; 
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .modal-header {
-            border-bottom: 1px solid #4a4a4a; /* Lighter border for separation */
+            border-bottom: 1px solid #4a4a4a;
         }
 
         .modal-title {
@@ -344,8 +329,8 @@
         }
 
         .btn-close {
-            filter: invert(1); /* Makes the close button white */
-            opacity: 0.8; /* Slightly less opaque */
+            filter: invert(1); 
+            opacity: 0.8; 
         }
         .btn-close:hover {
             opacity: 1;
@@ -442,8 +427,8 @@
             <a href="https://www.youtube.com/@Jeylzu"><img src="yt.png" alt="YouTube Icon" class="social-icon"></a>
         </div>
 
-        <a href="https://www.richdad.com/books/rich-dad-poor-dad" class="link-button">
-            <img src="book.jpg" alt="Book Icon"> Favorite Book
+        <a href="https://ptapme.vercel.app/" class="link-button">
+            <img src="logo.png" alt="Book Icon"> Tap me
         </a>
         <a href="https://jhales.vercel.app/" class="link-button">
             <img src="website.png" alt="Website Icon"> Official Website
@@ -478,6 +463,8 @@
         </div>
     </div>
 
+    
+
 
     <div id="qrModal" class="qr-modal-overlay">
         <div class="qr-modal-content">
@@ -510,8 +497,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', (event) => {
-            // Initially hide the QR modal, you might have some other logic here
-            // document.getElementById('qrModal').style.display = 'none';
         });
     </script>
 </body>
