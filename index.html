@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jhales Profile</title>
+    <title>Jhales' Profile</title>
     <style>
         body {
             font-family: sans-serif;
             margin: 0;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: flex-start; 
             min-height: 100vh;
-            background-image: url('bg2.jpg');
+            background-image: url('bg2.jpg'); 
             background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-position: center; 
+            background-repeat: no-repeat; 
             background-attachment: fixed;
-            background-color: #1a1a1a;
+            background-color: #1a1a1a; 
             color: #f0f0f0;
-            padding-top: 50px;
+            padding-top: 50px; 
             box-sizing: border-box;
             position: relative;
         }
@@ -28,11 +28,11 @@
             width: 90%;
             max-width: 400px;
             text-align: center;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.4); 
             border-radius: 15px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1); 
         }
 
         .profile-header {
@@ -44,7 +44,7 @@
             height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #fff;
+            border: 3px solid #fff; 
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
             margin-bottom: 10px;
         }
@@ -59,7 +59,7 @@
 
         .profile-title {
             font-size: 1.1em;
-            color: #bbb;
+            color: #bbb; 
             margin-bottom: 20px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
@@ -68,7 +68,7 @@
             display: flex;
             justify-content: center;
             margin-bottom: 30px;
-            gap: 25px;
+            gap: 25px; 
         }
 
         .social-icon {
@@ -77,7 +77,7 @@
             border-radius: 50%;
             object-fit: cover;
             transition: transform 0.2s ease, filter 0.2s ease;
-            filter: grayscale(0%);
+            filter: grayscale(0%); 
         }
 
         .social-icon:hover {
@@ -88,17 +88,17 @@
         .link-button {
             display: flex;
             align-items: center;
-            background-color: rgba(60, 60, 60, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            background-color: rgba(60, 60, 60, 0.7); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            border-radius: 10px; 
             padding: 12px 20px;
             margin: 15px auto;
             text-decoration: none;
-            color: #f0f0f0;
+            color: #f0f0f0; 
             font-size: 1.1em;
-            font-weight: normal;
+            font-weight: normal; 
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); 
             max-width: 300px;
             justify-content: flex-start;
         }
@@ -112,10 +112,96 @@
         .link-button img {
             width: 40px;
             height: 40px;
-            border-radius: 8px;
+            border-radius: 8px; 
             object-fit: cover;
             margin-right: 15px;
             border: none;
+        }
+
+        /* --- Music Card Styling --- */
+        .music-card {
+            background-color: rgba(60, 60, 60, 0.7); /* Match link button background */
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            border-radius: 10px; 
+            padding: 12px 20px;
+            margin: 15px auto; /* Center like link buttons */
+            max-width: 300px; /* Match link buttons */
+            display: flex; /* Use flexbox for alignment */
+            align-items: center;
+            justify-content: space-between; /* Space out items */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            color: #f0f0f0; /* Ensure text color is visible */
+        }
+
+        .music-card:hover {
+            background-color: rgba(80, 80, 80, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .music-card .icon-circle {
+            background-color: #fff;
+            border-radius: 50%;
+            width: 40px; /* Match link button icon size */
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            margin-right: 15px; /* Spacing */
+        }
+
+        .music-card .icon-circle i {
+            color: #ffc107; /* Warning color for music icon */
+            font-size: 1.5em; /* Adjust icon size */
+        }
+
+        .music-card .music-text {
+            flex-grow: 1; /* Allow text to take available space */
+            text-align: left; /* Align text to the left */
+        }
+
+        .music-card .music-text p {
+            margin: 0; /* Remove default paragraph margin */
+            font-size: 0.9em;
+            color: #ccc;
+        }
+
+        .music-card .play-button {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .music-card .play-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .music-card .play-button i {
+            color: #fff;
+            font-size: 1.2em;
+        }
+        /* --- End Music Card Styling --- */
+
+
+        .signature {
+            margin-top: 50px;
+            text-align: center;
+            color: #ccc; 
+        }
+
+        .signature img {
+            width: 150px; 
+            opacity: 0.7; 
+            filter: grayscale(100%) brightness(150%); 
         }
 
         .menu-icon {
@@ -129,7 +215,7 @@
             justify-content: space-around;
             align-items: center;
             cursor: pointer;
-            z-index: 1000;
+            z-index: 1000; 
         }
 
         .menu-icon span {
@@ -139,24 +225,24 @@
             border-radius: 50%;
         }
 
-        .qr-modal-overlay, .spotify-modal-overlay {
-            display: none;
+        .qr-modal-overlay {
+            display: none; 
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.8); 
             justify-content: center;
             align-items: center;
-            z-index: 2000;
+            z-index: 2000; 
         }
 
-        .qr-modal-content, .spotify-modal-content {
+        .qr-modal-content {
             background-color: #fff;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); 
             text-align: center;
             position: relative;
             max-width: 350px;
@@ -166,7 +252,7 @@
             align-items: center;
         }
 
-        .qr-modal-close, .spotify-modal-close {
+        .qr-modal-close {
             position: absolute;
             top: 10px;
             right: 15px;
@@ -177,7 +263,7 @@
             padding: 0 5px;
         }
 
-        .qr-modal-close:hover, .spotify-modal-close:hover {
+        .qr-modal-close:hover {
             color: #000;
         }
 
@@ -201,7 +287,7 @@
             width: 200px;
             height: 200px;
             margin: 20px 0;
-            border: 1px solid #eee;
+            border: 1px solid #eee; 
         }
 
         .qr-modal-download-link,
@@ -219,7 +305,7 @@
 
         .qr-modal-copy-button {
             display: block;
-            width: calc(100% - 40px);
+            width: calc(100% - 40px); /* Adjust for padding */
             padding: 12px 20px;
             background-color: #000;
             color: #fff;
@@ -236,27 +322,13 @@
             background-color: #333;
         }
 
-        .spotify-player-container {
-            width: 100%;
-            height: 352px; /* Standard height for Spotify embeds */
-            overflow: hidden; /* Ensure the iframe fits */
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        .spotify-player-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
         @media (max-width: 600px) {
             body {
-                padding-top: 20px;
+                padding-top: 20px; 
             }
 
             .container {
-                width: 95%;
+                width: 95%; 
                 padding: 15px;
                 border-radius: 10px;
             }
@@ -284,7 +356,25 @@
                 height: 35px;
             }
 
-            .qr-modal-content, .spotify-modal-content {
+            .music-card .icon-circle {
+                width: 35px;
+                height: 35px;
+            }
+
+            .music-card .icon-circle i {
+                font-size: 1.2em;
+            }
+
+            .music-card .play-button {
+                width: 30px;
+                height: 30px;
+            }
+
+            .music-card .play-button i {
+                font-size: 1em;
+            }
+
+            .qr-modal-content {
                 padding: 20px;
             }
 
@@ -294,6 +384,9 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div class="menu-icon" onclick="openQrModal()">
@@ -306,7 +399,7 @@
         <div class="profile-header">
             <img src="jeyls.jpg" alt="Jhales' Profile Picture" class="profile-pic">
             <div class="profile-name">Jhales</div>
-            <div class="profile-title">Student | Web Developer</div>
+            <div class="profile-title">Student | Developer | Programmer</div> 
         </div>
 
         <div class="social-icons">
@@ -323,28 +416,42 @@
             <img src="website.png" alt="Website Icon"> Official Website
         </a>
 
-        <a href="#" class="link-button" onclick="openSpotifyModal()">
-            <img src="spotify.png" alt="Spotify Icon"> Music Spotify Multo
-        </a>
+        <div class="music-card" data-bs-toggle="modal" data-bs-target="#musicModal">
+            <div class="icon-circle">
+                <i class="bi bi-music-note"></i>
+            </div>
+            <div class="music-text">
+                <p class="mb-0 fw-semibold">Music </p>
+            </div>
+            <div class="play-button">
+                <i class="bi bi-play-circle"></i>
+            </div>
+        </div>
+        </div>
+
+    <div class="modal fade" id="musicModal" tabindex="-1" aria-labelledby="musicModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="musicModalLabel">Music</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/49x1ssD8GQAufV4KvT2xSq?si=qkkOBYhPRRy0eafo3hWVqw" width="100%" height="152" frameborder="0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
     </div>
+
 
     <div id="qrModal" class="qr-modal-overlay">
         <div class="qr-modal-content">
             <span class="qr-modal-close" onclick="closeQrModal()">×</span>
             <img src="jeyls.jpg" alt="Jhales' Profile Picture" class="qr-modal-profile-pic">
             <div class="qr-modal-name">Jhales</div>
-            <img src="qr.png" alt="QR Code" class="qr-modal-qr-code">
+            <img src="qr.png" alt="QR Code" class="qr-modal-qr-code"> 
             <a href="qr.png" download="qr.png" class="qr-modal-download-link">Scan or download QR code</a>
             <button class="qr-modal-copy-button" onclick="copyPageUrl()">Copy Page URL</button>
-        </div>
-    </div>
-
-    <div id="spotifyModal" class="spotify-modal-overlay">
-        <div class="spotify-modal-content">
-            <span class="spotify-modal-close" onclick="closeSpotifyModal()">×</span>
-            <div class="spotify-player-container">
-                <iframe src="https://open.spotify.com/embed/track/3T6l3uKGE6vD8LwO0g17Lg?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
         </div>
     </div>
 
@@ -355,14 +462,6 @@
 
         function closeQrModal() {
             document.getElementById('qrModal').style.display = 'none';
-        }
-
-        function openSpotifyModal() {
-            document.getElementById('spotifyModal').style.display = 'flex';
-        }
-
-        function closeSpotifyModal() {
-            document.getElementById('spotifyModal').style.display = 'none';
         }
 
         function copyPageUrl() {
@@ -377,7 +476,6 @@
 
         document.addEventListener('DOMContentLoaded', (event) => {
             document.getElementById('qrModal').style.display = 'none';
-            document.getElementById('spotifyModal').style.display = 'none';
         });
     </script>
 </body>
